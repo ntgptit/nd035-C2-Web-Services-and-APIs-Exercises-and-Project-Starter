@@ -41,6 +41,11 @@ public class PriceClient {
                     )
                     .retrieve().bodyToMono(Price.class).block();
 
+			if (price == null) {
+				log.error("Unexpected error retrieving price for vehicle {}", vehicleId);
+				return "(consult price)";
+			}
+
             return String.format("%s %s", price.getCurrency(), price.getPrice());
 
         } catch (Exception e) {

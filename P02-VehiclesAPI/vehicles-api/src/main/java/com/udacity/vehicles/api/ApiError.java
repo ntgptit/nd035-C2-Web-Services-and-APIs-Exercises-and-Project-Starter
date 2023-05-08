@@ -1,13 +1,14 @@
 package com.udacity.vehicles.api;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  * Declares methods to return errors and other messages from the API.
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
-class ApiError {
+public class ApiError {
 
     private final String message;
     private final List<String> errors;
@@ -18,10 +19,10 @@ class ApiError {
     }
 
     public String getMessage() {
-        return message;
+        return this.message;
     }
 
     public List<String> getErrors() {
-        return errors;
+        return this.errors;
     }
 }

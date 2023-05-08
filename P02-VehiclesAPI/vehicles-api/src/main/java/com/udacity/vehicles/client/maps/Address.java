@@ -11,6 +11,7 @@ public class Address {
     private String zip;
 
     public Address() {
+		super();
     }
 
     public String getAddress() {
